@@ -7,6 +7,20 @@ The first steps in deploying the backend is complete. The frontend K8 files stil
 
 Steps to deploy the backend:
 
-1. Build image: docker build -t todo-app-api:1.0.0 backend
+1. Build image: `docker build -t todo-app-api:1.0.0 backend/`
 
-2. Deploy: kubectl apply -f helm/frontend/templates/deployment.yaml -f helm/frontend/templates/service.yaml
+2. Deploy: `kubectl apply -f helm/frontend/templates/deployment.yaml -f helm/frontend/templates/service.yaml`
+   
+## Frontend deployment
+
+The first steps in deploying the frontend is complete. The frontend K8 files still needs to be converted to a helm chart.
+
+Steps to deploy the frontend:
+
+1. Build image: `docker build -t todo-app-ui:1.0.0 frontend/`
+
+1. Deploy: `kubectl apply -f helm/frontend/templates/deployment.yaml -f helm/frontend/templates/service.yaml`
+
+2. Create port-forward: `kubectl port-forward service/todo-app-ui 8080:8080`
+   
+3. Navigate to `localhost:8080`
