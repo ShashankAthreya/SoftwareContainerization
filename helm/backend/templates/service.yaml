@@ -6,11 +6,10 @@ metadata:
     app: todo-app-api
     component: todo-app-api
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
     - name: http
       port: 8080
       targetPort: 5000
   selector:
     app: todo-app-api
-    component: todo-app-api
