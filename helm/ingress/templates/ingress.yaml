@@ -3,8 +3,6 @@ kind: Ingress
 metadata:
   #TODO: GCP ingress
   name: ingress
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - http:
