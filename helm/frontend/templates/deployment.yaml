@@ -17,9 +17,5 @@ spec:
       containers:
       - name: todo-app-ui
         image: todo-app-ui:1.0.0
-        # resources:
-        #   limits:
-        #     memory: "128Mi"
-        #     cpu: "500m"
         ports:
         - containerPort: 8080
