@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-app-api
+  labels:
+    app: todo-app-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: todo-app-api
+  template:
+    metadata:
+      labels:
+        app: todo-app-api
+    spec:
+      containers:
+      - name: todo-app-api
+        image: todo-app-api:1.0.0
+        ports:
+        - containerPort: 5000
