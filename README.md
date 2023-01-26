@@ -1,16 +1,14 @@
 # Software Containerisation
-This repository is contains the code and images for the assignment of Software Containerisation 
+This repository is contains the code and images for the assignment of Software Containerisation
 
-## Frontend deployment
+## Deployment
 
-The first steps in deploying the frontend is complete. The frontend K8 files still needs to be converted to a helm chart.
+`make all`
 
-Steps to deploy the frontend:
+## Testing
 
-1. Build image: `docker build -t todo-app-ui:1.0.0 frontend/`
+Run two port-forwards:
 
-1. Deploy: `kubectl apply -f helm/frontend/templates/deployment.yaml -f helm/frontend/templates/service.yaml`
+1. Backend: `kubectl port-forward service/todo-app-api 5000:5000 -n todo`
 
-2. Create port-forward: `kubectl port-forward service/todo-app-ui 8080:8080`
-   
-3. Navigate to `localhost:8080`
+2. Frontend: `kubectl port-forward service/todo-app-ui 8080:8080 -n todo`
