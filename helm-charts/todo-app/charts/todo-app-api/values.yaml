@@ -37,7 +37,7 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: NodePort
+  type: ClusterIP
   port: 5000
 
 ingress:
@@ -80,3 +80,6 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+api:
+  redisUrl: "redis.default.svc.cluster.local"
