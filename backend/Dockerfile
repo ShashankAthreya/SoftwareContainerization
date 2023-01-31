@@ -1,0 +1,23 @@
+FROM python:3.10-alpine
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the requirements file
+COPY requirements.txt .
+
+# Install the required packages
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the application code
+COPY app.py .
+
+# Expose the port
+EXPOSE 5000
+
+# TODO: Delete
+RUN apk --no-cache add curl
+
+
+# Run the application
+CMD ["python", "app.py"]

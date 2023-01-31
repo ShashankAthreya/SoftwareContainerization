@@ -1,0 +1,60 @@
+{{/*apiVersion: apps/v1*/}}
+{{/*kind: StatefulSet*/}}
+{{/*metadata:*/}}
+{{/*  name: {{ include "redis.fullname" . }}*/}}
+{{/*  labels:*/}}
+{{/*    {{- include "redis.labels" . | nindent 4 }}*/}}
+{{/*    role: follower*/}}
+{{/*spec:*/}}
+{{/*  {{- if not .Values.autoscaling.enabled }}*/}}
+{{/*  replicas: {{ .Values.replicaCount }}*/}}
+{{/*  {{- end }}*/}}
+{{/*  selector:*/}}
+{{/*    matchLabels:*/}}
+{{/*      {{- include "redis.selectorLabels" . | nindent 6 }}*/}}
+{{/*  template:*/}}
+{{/*    metadata:*/}}
+{{/*      {{- with .Values.podAnnotations }}*/}}
+{{/*      annotations:*/}}
+{{/*        {{- toYaml . | nindent 8 }}*/}}
+{{/*      {{- end }}*/}}
+{{/*      labels:*/}}
+{{/*        {{- include "redis.selectorLabels" . | nindent 8 }}*/}}
+{{/*        role: follower*/}}
+{{/*    spec:*/}}
+{{/*      {{- with .Values.imagePullSecrets }}*/}}
+{{/*      imagePullSecrets:*/}}
+{{/*        {{- toYaml . | nindent 8 }}*/}}
+{{/*      {{- end }}*/}}
+{{/*      serviceAccountName: {{ include "redis.serviceAccountName" . }}*/}}
+{{/*      securityContext:*/}}
+{{/*        {{- toYaml .Values.podSecurityContext | nindent 8 }}*/}}
+{{/*      volumes:*/}}
+{{/*        - name: redis-data*/}}
+{{/*          persistentVolumeClaim:*/}}
+{{/*            claimName: redis-data-claim*/}}
+{{/*        - name: config*/}}
+{{/*          persistentVolumeClaim:*/}}
+{{/*            claimName: config-claim*/}}
+{{/*      containers:*/}}
+{{/*        - name: {{ .Chart.Name }}*/}}
+{{/*          securityContext:*/}}
+{{/*            {{- toYaml .Values.securityContext | nindent 12 }}*/}}
+{{/*          image: gcr.io/google_samples/gb-redis-follower:v2
+{{/*          imagePullPolicy: {{ .Values.image.pullPolicy }}*/}}
+{{/*          ports:*/}}
+{{/*            - containerPort: 6379*/}}
+{{/*          resources:*/}}
+{{/*            {{- toYaml .Values.resources | nindent 12 }}*/}}
+{{/*      {{- with .Values.nodeSelector }}*/}}
+{{/*      nodeSelector:*/}}
+{{/*        {{- toYaml . | nindent 8 }}*/}}
+{{/*      {{- end }}*/}}
+{{/*      {{- with .Values.affinity }}*/}}
+{{/*      affinity:*/}}
+{{/*        {{- toYaml . | nindent 8 }}*/}}
+{{/*      {{- end }}*/}}
+{{/*      {{- with .Values.tolerations }}*/}}
+{{/*      tolerations:*/}}
+{{/*        {{- toYaml . | nindent 8 }}*/}}
+{{/*      {{- end }}*/}}
