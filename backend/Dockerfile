@@ -15,9 +15,5 @@ COPY app.py .
 # Expose the port
 EXPOSE 5000
 
-# TODO: Delete
-RUN apk --no-cache add curl
-
-
 # Run the application
 CMD ["python", "app.py"]

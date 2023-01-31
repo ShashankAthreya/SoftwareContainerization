@@ -7,15 +7,13 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install the dependencies
-RUN npm ci
+RUN npm install
 
 # Copy the rest of the code
 COPY . .
 
 # Expose the port
 EXPOSE 8080
-
-RUN ls -la
 
 # Run the command to start the server
 CMD ["npm", "run", "serve"]
