@@ -1,9 +1,13 @@
 # Software Containerisation
 This repository is contains the code and images for the assignment of Software Containerisation
 
-## Deployment
+## Helm commands
 
-`helm install helm-charts/todo-app --generate-name`
+
+1. Install the chart: `helm install helm-charts/todo-app --name-template test`
+2. Uninstall the chart: `helm uninstall test`
+3. Upgrade an image with the chart (example of upgrading todo-app-ui image):
+` helm upgrade test ./helm-charts/todo-app --set todo-app-ui.image.tag=1.0.3`
 
 ## RBAC
 
