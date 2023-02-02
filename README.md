@@ -4,9 +4,10 @@ This repository is contains the code and images for the assignment of Software C
 ## Terraform
 
 The following steps are how to deploy terraform code for GCP. You need to have a GCP project up and running for this.
+Make sure you are first authenticated properly with the gcloud auth (`gcloud auth login`).
 
 1. `terraform init`
-2. `terraform apply -var "project=<YOUR-PROJECT-ID>"` & and type 'yes'
+2. `terraform apply -var "project=<YOUR-PROJECT-ID>"`
 
 The setup of GKE and node pools take a while so wait until they are set up.
 
@@ -16,6 +17,14 @@ The setup of GKE and node pools take a while so wait until they are set up.
 2. Uninstall the chart: `helm uninstall test`
 3. Upgrade an image with the chart (example of upgrading todo-app-ui image):
 ` helm upgrade test ./helm-charts/todo-app --set todo-app-ui.image.tag=1.0.3`
+
+When installing the chart to a GKE cluster, do note that the ingress set up takes a couple of minutes.
+
+## GKE
+
+Run the following command to fetch the credentials for the GKE cluster:
+`gcloud container clusters get-credentials vu-sc --region europe-west4-a `
+
 
 ## RBAC
 
