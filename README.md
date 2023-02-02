@@ -1,8 +1,16 @@
 # Software Containerisation
 This repository is contains the code and images for the assignment of Software Containerisation
 
-## Helm commands
+## Terraform
 
+The following steps are how to deploy terraform code for GCP. You need to have a GCP project up and running for this.
+
+1. `terraform init`
+2. `terraform apply -var "project=<YOUR-PROJECT-ID>"` & and type 'yes'
+
+The setup of GKE and node pools take a while so wait until they are set up.
+
+## Helm
 
 1. Install the chart: `helm install helm-charts/todo-app --name-template test`
 2. Uninstall the chart: `helm uninstall test`
