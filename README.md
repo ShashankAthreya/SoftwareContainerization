@@ -3,6 +3,8 @@ This repository is contains the code and images for the assignment of Software C
 
 ## Terraform
 
+We use Terraform to create the GKE cluster, node pool for the cluster and a static IP for the ingress to use.
+
 The following steps are how to deploy terraform code for GCP. You need to have a GCP project up and running for this.
 Make sure you are first authenticated properly with the gcloud auth (`gcloud auth login`).
 
@@ -13,10 +15,10 @@ The setup of GKE and node pools take a while so wait until they are set up.
 
 ## Helm
 
-1. Install the chart: `helm install helm-charts/todo-app --name-template test`
-2. Uninstall the chart: `helm uninstall test`
+1. Install the chart: `helm install helm-charts/todo-app --name-template demo`
+2. Uninstall the chart: `helm uninstall demo`
 3. Upgrade an image with the chart (example of upgrading todo-app-ui image):
-` helm upgrade test ./helm-charts/todo-app --set todo-app-ui.image.tag=1.0.3`
+`helm upgrade demo ./helm-charts/todo-app --set todo-app-ui.image.tag=1.0.3`
 
 When installing the chart to a GKE cluster, do note that the ingress set up takes a couple of minutes.
 
@@ -37,3 +39,23 @@ read all the core API resources.
 
 3. contract-developer -- A role meant for contract developers who only work on certain projects. The role provides
 a read, create and update permissions to specific resources in a specific namespace meant for the project.
+
+   
+## Presentation guides
+
+### Show how to deploy the application for the first time
+
+### Show how to scale the application horizontally
+
+### Show how to uninstall the application
+
+### Re-building the application after a source code change
+
+1. Build and push a new version of the image: `docker build --push -t andersnou/todo-app-ui:2.0.0 .`
+   1.  For M1 CPU: `docker buildx build --platform linux/amd64 --push -t andersnou/todo-app-ui:2.0.0 .`
+2. Upgrade the helm chart: `helm upgrade demo ./helm-charts/todo-app --set todo-app-ui.image.tag=2.0.0`
+
+
+### Upgrade application - Deployment rollout
+
+### Upgrade application - Canary update
