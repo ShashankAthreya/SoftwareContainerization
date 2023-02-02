@@ -1,0 +1,28 @@
+{{- if eq .Values.gcp true }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: "todo-app"
+  annotations:
+    kubernetes.io/ingress.class: 'gce'
+    kubernetes.io/ingress.global-static-ip-name: {{ .Values.staticIp | quote }}
+    kubernetes.io/ingress.allow-http: {{ .Values.allowHttp | quote }}
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Values.services.ui.name }}
+                port:
+                  number: 8080
+          - path: /todos
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Values.services.api.name }}
+                port:
+                  number: 5000
+{{- end }}

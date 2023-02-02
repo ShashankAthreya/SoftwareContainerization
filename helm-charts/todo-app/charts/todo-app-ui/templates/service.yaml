@@ -1,15 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "todo-app-ui.fullname" . }}
+  name: {{ .Values.name }}
   labels:
     {{- include "todo-app-ui.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: http
-      protocol: TCP
-      name: http
+      targetPort: {{ .Values.service.port }}
   selector:
     {{- include "todo-app-ui.selectorLabels" . | nindent 4 }}

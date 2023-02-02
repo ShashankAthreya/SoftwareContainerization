@@ -40,6 +40,10 @@ spec:
             - name: http
               containerPort: 5000
               protocol: TCP
+          readinessProbe:
+            httpGet:
+              port: 5000
+              path: /todos
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
