@@ -1,16 +1,19 @@
 <template>
   <div>
     <TodoList/>
+    <Footer/>
   </div>
 </template>
 
 <script>
 
 import TodoList from './components/TodoList'
+import Footer from "./components/Footer";
 export default {
   name: 'App',
   components: {
-    TodoList
+    TodoList,
+    Footer
   }
 }
 </script>

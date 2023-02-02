@@ -3,6 +3,9 @@ FROM node:16-alpine
 # Set the working directory
 WORKDIR /app
 
+ARG VUE_APP_VERSION
+ENV VUE_APP_VERSION=$VUE_APP_VERSION
+
 # Copy the package.json and package-lock.json
 COPY package*.json ./
 
