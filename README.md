@@ -13,6 +13,10 @@ Make sure you are first authenticated properly with the gcloud auth (`gcloud aut
 
 The setup of GKE and node pools take a while so wait until they are set up.
 
+### Cleanup
+
+Run `terraform destroy -var "project=<YOUR-PROJECT-ID>` to destroy all the created cloud resources.
+
 ## Helm
 
 1. Install the chart: `helm install helm-charts/todo-app --name-template demo`
