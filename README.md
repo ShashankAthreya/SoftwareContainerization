@@ -53,9 +53,22 @@ a read, create and update permissions to specific resources in a specific namesp
 
 1. Build and push a new version of the image: `docker build --push -t andersnou/todo-app-ui:2.0.0 .`
    1.  For M1 CPU: `docker buildx build --platform linux/amd64 --push -t andersnou/todo-app-ui:2.0.0 .`
-2. Upgrade the helm chart: `helm upgrade demo ./helm-charts/todo-app --set todo-app-ui.image.tag=2.0.0`
+2. Upgrade the helm chart: `helm upgrade demo ./helm-charts/todo-app --set todo-app-ui.image.tag=2.0.0 -n todo-app`
 
 
 ### Upgrade application - Deployment rollout
 
+1. Change the version of the image -- either by modifying the `values.yaml` or passing as a parameter.
+   1. Pass the value: `helm upgrade demo ./helm-charts/todo-app -n todo-app --set todo-app-api.image.tag=2.0.0`
+   2. Or by changing the file: `helm upgrade demo ./helm-charts/todo-app -n todo-app`
+
 ### Upgrade application - Canary update
+
+Deploys X/2 number of canary pods where X is the number of pod replicas for the application. E.g.
+X=4, then 4 pods are deployed for the application and 2 canary pods are deployed during deployment. Meaning that
+33% of the traffic is routed to canary pods.
+
+1. Deploy the canary pods: `helm upgrade demo ./helm-charts/todo-app -n todo-app --set todo-app-ui.canary.create=true --set todo-app-ui.canary.tag=2.0.0`
+2. Validate that the new version is working
+3. Change the image version of the UI to 2.0.0 in the `values.yaml`
+4. Delete the canary pods: `helm upgrade demo ./helm-charts/todo-app -n todo-app --set todo-app-ui.canary.create=false`

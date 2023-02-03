@@ -1,12 +1,13 @@
+{{- if .Values.canary.create -}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.name }}
+  name: {{ .Values.canary.name }}
   labels:
     {{- include "todo-app-ui.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ div .Values.replicaCount 2 }}
   {{- end }}
   selector:
     matchLabels:
@@ -31,11 +32,11 @@ spec:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.canary.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: VUE_APP_VERSION
-              value: {{ .Values.image.tag }}
+              value: {{ .Values.canary.tag }}
           ports:
             - containerPort: 8080
               protocol: TCP
@@ -53,3 +54,4 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+{{- end}}
