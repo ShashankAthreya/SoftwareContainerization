@@ -11,6 +11,11 @@ spec:
   selector:
     matchLabels:
       {{- include "todo-app-api.selectorLabels" . | nindent 6 }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: {{ .Values.rollingUpdate.maxSurge }}
+      maxUnavailable: {{ .Values.rollingUpdate.maxUnavailable }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}

@@ -4,7 +4,7 @@
 
 name: todo-app-api
 
-replicaCount: 1
+replicaCount: 4
 
 image:
   repository: andersnou/todo-app-api
@@ -12,13 +12,17 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "1.0.0"
 
+rollingUpdate:
+  maxSurge: 50%
+  maxUnavailable: 50%
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
 serviceAccount:
   # Specifies whether a service account should be created
-  create: true
+  create: false
   # Annotations to add to the service account
   annotations: {}
   # The name of the service account to use.
