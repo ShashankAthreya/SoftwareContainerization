@@ -72,11 +72,25 @@ a read, create and update permissions to specific resources in a specific namesp
    
 ## Presentation guides
 
+### Show how to build and push the docker images
+
+1. Build image with: `docker build -t <DOCKERHUB-USERNAME>/<IMAGE-NAME> .` under `./backend` or `./frontend`.
+2. Push image to docker hub: `docker push <DOCKERHUB-USERNAME>/<IMAGE-NAME>`.
+
 ### Show how to deploy the application for the first time
+
+1. Configure terraform with `terraform init` and `terraform apply -var "project=<YOUR-PROJECT-ID>"`.
+
+2. Install the chart with `helm install helm-charts/todo-app --name-template demo`.
 
 ### Show how to scale the application horizontally
 
+Scale the deployment with `kubectl scale`. For example, to scale up the frontend, do `kubectl scale --replica=3 deployment/todo-app-ui`.
+
 ### Show how to uninstall the application
+
+1. Uninstall helm chart with `helm uninstall demo`.
+2. Clean up terraform with `terraform destroy -var "project=<YOUR-PROJECT-ID>`.
 
 ### Re-building the application after a source code change
 
