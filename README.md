@@ -31,6 +31,11 @@ When installing the chart to a GKE cluster, do note that the ingress set up take
 Run the following command to fetch the credentials for the GKE cluster:
 `gcloud container clusters get-credentials vu-sc --region europe-west4-a `
 
+## TLS/SSL Certificate
+
+We create it using openssl in ./certs/.
+1. `openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 5 -nodes -subj "/C=NL/ST=Noord-Holland/L=Amsterdam/O=VU/OU=Education/CN=<INSTANCE-IP>/emailAddress=<EMAIL>"`
+
 
 ## RBAC
 

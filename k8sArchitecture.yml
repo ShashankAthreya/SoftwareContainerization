@@ -1,0 +1,140 @@
+addonsConfig:
+  gcePersistentDiskCsiDriverConfig:
+    enabled: true
+  kubernetesDashboard:
+    disabled: true
+  networkPolicyConfig:
+    disabled: true
+autopilot: {}
+autoscaling:
+  autoscalingProfile: BALANCED
+binaryAuthorization: {}
+clusterIpv4Cidr: 10.116.0.0/14
+createTime: '2023-02-04T16:06:44+00:00'
+currentMasterVersion: 1.24.8-gke.2000
+currentNodeCount: 1
+currentNodeVersion: 1.24.8-gke.2000
+databaseEncryption:
+  state: DECRYPTED
+endpoint: 35.204.127.17
+etag: cd10cfc9-6b9d-4f6f-87b3-b117e0bf22de
+id: 9200df33e37f4a35a89bff27a0eeee6ceab9f092a9a246b586840f0b924fd197
+initialClusterVersion: 1.24.8-gke.2000
+initialNodeCount: 1
+instanceGroupUrls:
+- https://www.googleapis.com/compute/v1/projects/calcium-heaven-376815/zones/europe-west4-a/instanceGroupManagers/gke-vu-sc-vu-sc-node-pool-5e7aa8f9-grp
+ipAllocationPolicy:
+  stackType: IPV4
+  useRoutes: true
+labelFingerprint: a9dc16a7
+legacyAbac: {}
+location: europe-west4-a
+locations:
+- europe-west4-a
+loggingConfig:
+  componentConfig:
+    enableComponents:
+    - SYSTEM_COMPONENTS
+    - WORKLOADS
+loggingService: logging.googleapis.com/kubernetes
+maintenancePolicy:
+  resourceVersion: e3b0c442
+masterAuth:
+  clusterCaCertificate: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVMVENDQXBXZ0F3SUJBZ0lSQU1OZGwzVHJSN1lSdG5IamVDQ1Y4akV3RFFZSktvWklodmNOQVFFTEJRQXcKTHpFdE1Dc0dBMVVFQXhNa1pHWTRPRE5rTVRZdE16YzNZaTAwTlRka0xXRmxOelV0WTJVM09XSXdaVFZpTVdNegpNQ0FYRFRJek1ESXdOREUxTURZME5Wb1lEekl3TlRNd01USTNNVFl3TmpRMVdqQXZNUzB3S3dZRFZRUURFeVJrClpqZzRNMlF4Tmkwek56ZGlMVFExTjJRdFlXVTNOUzFqWlRjNVlqQmxOV0l4WXpNd2dnR2lNQTBHQ1NxR1NJYjMKRFFFQkFRVUFBNElCandBd2dnR0tBb0lCZ1FEUDRsZ2MrdXhPdG94dGNyTTBSOTZpeWJ3MEJDKzZBKzVRNjFEcwpyTGZiSExzN3ppY1hZbGxLQTJHMkp0L0xSK1NMaDM2NWJGRzF1SXpuZ1ZtYk9CL0U4K0Y5WFBCMnpURUJOMHQxClF6UkdSZ01PNXZKRy9oZEZtZ0JQd1o4eXE4V1h4SFYydElxYzR6dVVyL0laTllKb0psMGN6QkxQVC9kSzk3dHUKalpTUzYvRWM3YVRIWjE0UExEY2orYXZsVkN2R2srb0NFOHE5Sm0vSTFMc05iTU5qOUlRWUw4aitncmxDSDdPNQozYXFKaXc0R04wQUozQTZQQU8zN3B4Z0lSdjRrNU1HeERBUzdKdVhZYzQ5S0VGckk3RTlPMFQ2bnNFekl5UklwCkxieDlKY1RnczlLQ1dQRHVIVmlYOE5SUXBVWE9HNm0zMnl3dS9VcFZ0S3JXUTZIU20yU3REUVNCWitEL1ZGVG0KSU93elR1c1NYekpzSE5UeWRlK1E5S0FRa09EaEtVdERYUXc3S2plQXU4Y0tXc0ZZdTFWeVJGaWRUUUw2N1FmSQpjVXMwb0plTHdGZjYyWGRWM2haRTNVNjd2YnF3OEQwSUZYdzJFdFU4QWdzZnpBRXllakVpT2hhUk5QMjdOOTRPClhKQVJUQktyTFR1YVRsUFFjUzFiYVUxM0N4OENBd0VBQWFOQ01FQXdEZ1lEVlIwUEFRSC9CQVFEQWdJRU1BOEcKQTFVZEV3RUIvd1FGTUFNQkFmOHdIUVlEVlIwT0JCWUVGQXlEYmRRcWdDVWdSOE45U25TV3ErL3dUNU1oTUEwRwpDU3FHU0liM0RRRUJDd1VBQTRJQmdRQy8wVU9MbTQ5elhKazJXTTJXNjdaRzFmbklUeCt3dzdHM3JsNUc0dWdVCjJnVnl0SFJaL2dMOENBTUVCYXZIMkg4RXZnamJMc0hwUndjVmtxN0tjaGNQYnFvSGQ5bFRJZEZZL2l2YzRrRS8KS0tGN29kTTVZaHRDcTlFMU1rYWZDQTZ4Q0lxdkMzZEdlSjBBVEZZbmZWaXVqaDdFOVNDSGxBY1ZzOHJySG8yTgp3L2ZGSDRiZ2RNL0NqQ1ZpNGVJZHVvWEcxTWdzdHJKYWJtTnFWem1rV3pqTjcrK0hXVnpIdWtEbmlpOFNYYzlVCmtLYzdxelpUa051U1FMTllraHUybHN4ZE5DeUxPZm90aUZwcXVTbGRwUmVBN0tNYXBQRCtYam5Na1F2Y25UL2cKdlUwdHdnMVhKb3dqdXBDV28vYUhHbWQzalNJNTVueVBNcXBoSmRubVpRcGdHam50TWNkNXJLelZlNFNnMDJaVQovaVVyR3c5bkhENFljTHlXRFpJRmdVUk9UTElXK3NQeU1qK3BUTzNrenlFK1paMVdHZnFMekdTdDdGbzVSaC9OCk8rUis5bUpyTDZ0Rm44NGtkbTN4VFR4MGJ3ZW9FVnEyU2VlQUVFcUszaHo5MVRJQVp6RWdiZlJtVkp3ZXJaYjUKYlFvb3g5dVZCbGUwZVFNQ1JtL3JSTlE9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+masterAuthorizedNetworksConfig:
+  gcpPublicCidrsAccessEnabled: true
+monitoringConfig:
+  componentConfig:
+    enableComponents:
+    - SYSTEM_COMPONENTS
+monitoringService: monitoring.googleapis.com/kubernetes
+name: vu-sc
+network: default
+networkConfig:
+  defaultSnatStatus: {}
+  network: projects/calcium-heaven-376815/global/networks/default
+  serviceExternalIpsConfig: {}
+  subnetwork: projects/calcium-heaven-376815/regions/europe-west4/subnetworks/default
+nodeConfig:
+  diskSizeGb: 100
+  diskType: pd-balanced
+  imageType: COS_CONTAINERD
+  loggingConfig:
+    variantConfig:
+      variant: DEFAULT
+  machineType: e2-small
+  metadata:
+    disable-legacy-endpoints: 'true'
+  oauthScopes:
+  - https://www.googleapis.com/auth/devstorage.read_only
+  - https://www.googleapis.com/auth/logging.write
+  - https://www.googleapis.com/auth/monitoring
+  - https://www.googleapis.com/auth/service.management.readonly
+  - https://www.googleapis.com/auth/servicecontrol
+  - https://www.googleapis.com/auth/trace.append
+  serviceAccount: default
+  shieldedInstanceConfig:
+    enableIntegrityMonitoring: true
+  windowsNodeConfig: {}
+nodeIpv4CidrSize: 24
+nodePoolAutoConfig: {}
+nodePoolDefaults:
+  nodeConfigDefaults:
+    loggingConfig:
+      variantConfig:
+        variant: DEFAULT
+nodePools:
+- config:
+    diskSizeGb: 100
+    diskType: pd-balanced
+    imageType: COS_CONTAINERD
+    loggingConfig:
+      variantConfig:
+        variant: DEFAULT
+    machineType: e2-small
+    metadata:
+      disable-legacy-endpoints: 'true'
+    oauthScopes:
+    - https://www.googleapis.com/auth/devstorage.read_only
+    - https://www.googleapis.com/auth/logging.write
+    - https://www.googleapis.com/auth/monitoring
+    - https://www.googleapis.com/auth/service.management.readonly
+    - https://www.googleapis.com/auth/servicecontrol
+    - https://www.googleapis.com/auth/trace.append
+    serviceAccount: default
+    shieldedInstanceConfig:
+      enableIntegrityMonitoring: true
+    windowsNodeConfig: {}
+  etag: 15bd826a-eac2-411c-923f-85a7e9059530
+  initialNodeCount: 1
+  instanceGroupUrls:
+  - https://www.googleapis.com/compute/v1/projects/calcium-heaven-376815/zones/europe-west4-a/instanceGroupManagers/gke-vu-sc-vu-sc-node-pool-5e7aa8f9-grp
+  locations:
+  - europe-west4-a
+  management:
+    autoRepair: true
+    autoUpgrade: true
+  name: vu-sc-node-pool
+  networkConfig:
+    enablePrivateNodes: false
+  podIpv4CidrSize: 24
+  selfLink: https://container.googleapis.com/v1/projects/calcium-heaven-376815/zones/europe-west4-a/clusters/vu-sc/nodePools/vu-sc-node-pool
+  status: RUNNING
+  upgradeSettings:
+    maxSurge: 1
+    strategy: SURGE
+  version: 1.24.8-gke.2000
+notificationConfig:
+  pubsub: {}
+privateClusterConfig:
+  privateEndpoint: 10.164.0.2
+  publicEndpoint: 35.204.127.17
+releaseChannel:
+  channel: REGULAR
+selfLink: https://container.googleapis.com/v1/projects/calcium-heaven-376815/zones/europe-west4-a/clusters/vu-sc
+servicesIpv4Cidr: 10.119.240.0/20
+shieldedNodes:
+  enabled: true
+status: RUNNING
+subnetwork: default
+zone: europe-west4-a
