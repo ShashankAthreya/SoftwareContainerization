@@ -1,6 +1,26 @@
 # Software Containerisation
 This repository is contains the code and images for the assignment of Software Containerisation
 
+## Architecture
+
+### GCP architecture
+
+![GCP architecture](./images/GCP-architecture.png "GCP Architecture")
+
+Our GCP architecture contains the following resources:
+
+* Google Kubernetes Engine
+* Cloud Load balancer
+* External IP Address
+* Compute Engine virtual machines
+
+The GKE hosts the Kubernetes engine, the Compute Engine machines are the nodes for the Kubernetes cluster.
+The load balancer is created automatically by GCP because we are provisioning an ingress.
+The external IP address is for attaching to the load balancer for the users to connect to.
+In a production setting, we would also add a DNS and have the DNS resolve to the external IP address, but 
+since this is a learning environment, then we did not reserve a domain.
+
+
 ## Terraform
 
 We use Terraform to create the GKE cluster, node pool for the cluster and a static IP for the ingress to use.
